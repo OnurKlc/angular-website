@@ -1,0 +1,7 @@
+<div class="left-menu">
+  <app-profile></app-profile>
+  <ul class="left-menu-list">
+    <li *ngFor="let item of leftMenuItems" class="left-menu-list-item"
+        (click)="leftMenuItemClickHandler(item)">{{ item.title }}</li>
+  </ul>
+</div>
