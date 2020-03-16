@@ -1,7 +1,17 @@
-<div class="left-menu">
+<div class="left-menu" [ngClass]="{'open-menu': isOpen}">
   <app-profile></app-profile>
   <ul class="left-menu-list">
     <li *ngFor="let item of leftMenuItems" class="left-menu-list-item"
         (click)="leftMenuItemClickHandler(item)">{{ item.title }}</li>
   </ul>
+</div>
+<div class="left-menu-opener" [ngClass]="{'left-menu-opener-open': isOpen}">
+  <div id="nav-icon2" (click)="toggleClass()" [ngClass]="{'open': isOpen}">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </div>

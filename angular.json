@@ -124,5 +124,10 @@
   "defaultProject": "angular-app",
   "cli": {
     "analytics": "cc5cb806-e7c5-4970-afa1-8b01ec54abc1"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
   }
 }

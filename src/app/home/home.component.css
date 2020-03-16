@@ -3,17 +3,19 @@
   justify-content: center;
   align-items: center;
 }
-.var-highlight{
-	color: #C0AD60;
-}
-.string-highlight{
-	color: rgba(253, 149, 90, 0.8);
+
+.var-highlight {
+  color: #C0AD60;
 }
 
-#typewriter{
-		font-size: 2em;
-		margin: 0;
-		font-family: "Courier New";
+.string-highlight {
+  color: rgba(253, 149, 90, 0.8);
+}
+
+#typewriter {
+  font-size: 1em;
+  margin: 100px 0 0 0;
+  font-family: "Courier New";
 }
 
 #typewriter:after {
@@ -21,17 +23,29 @@
   animation: blink 500ms linear infinite alternate;
 }
 
-@-webkit-keyframes blink{
-	0%{opacity: 0;}
-	100%{opacity: 1;}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-@-moz-keyframes blink{
-	0%{opacity: 0;}
-	100%{opacity: 1;}
+@-moz-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-@keyframes blink{
-	0%{opacity: 0;}
-	100%{opacity: 1;}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
