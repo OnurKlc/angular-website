@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 
+import { StateService} from '../state.service';
+
 @Component({
   selector: 'app-left-menu',
   templateUrl: './left-menu.component.html',
@@ -36,7 +38,7 @@ export class LeftMenuComponent implements OnInit {
 
   isOpen = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private stateService: StateService) { }
 
   ngOnInit(): void {
   }
@@ -48,6 +50,6 @@ export class LeftMenuComponent implements OnInit {
 
   toggleClass() {
     this.isOpen = !this.isOpen;
+    this.stateService.changeIsOpen(this.isOpen);
   }
-
 }

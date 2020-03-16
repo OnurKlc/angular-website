@@ -1,4 +1,4 @@
 <app-left-menu class="left-menu"></app-left-menu>
-<div class="main-view">
+<div class="main-view" [ngClass]="{'open': isOpen}">
   <router-outlet></router-outlet>
 </div>
