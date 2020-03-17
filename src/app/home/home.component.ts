@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy, HostListener} from '@angular/core';
+import {Component, OnInit, HostListener} from '@angular/core';
 import {Router} from '@angular/router';
 import * as _ from 'lodash-es';
 
@@ -7,7 +7,7 @@ import * as _ from 'lodash-es';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit {
   private debounceOnScroll = _.debounce((event) => this.handleEvent(event), 50,
     {
       leading: false,
