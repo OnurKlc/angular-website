@@ -13,27 +13,45 @@ const appRoots: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    data: {
+      page: 'home',
+    }
   },
   {
     path: 'about',
-    component: AboutComponent
+    component: AboutComponent,
+    data: {
+      page: 'about',
+    }
   },
   {
     path: 'portfolio',
-    component: PortfolioComponent
+    component: PortfolioComponent,
+    data: {
+      page: 'portfolio',
+    }
   },
   {
     path: 'resume',
-    component: ResumeComponent
+    component: ResumeComponent,
+    data: {
+      page: 'resume',
+    }
   },
   {
     path: 'blog',
-    component: BlogComponent
+    component: BlogComponent,
+    data: {
+      page: 'blog',
+    }
   },
   {
     path: 'contact',
-    component: ContactComponent
+    component: ContactComponent,
+    data: {
+      page: 'contact',
+    }
   }
 ];
 

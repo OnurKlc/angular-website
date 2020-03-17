@@ -1,13 +1,23 @@
 .main-view {
-  position: absolute;
-  left: 0;
   min-height: 100vh;
-  width: 100%;
-  transition: left 0.25s, width 0.25s;
+  width: calc(100% - 70px);
+  margin-left: 20px;
+  transition: margin-left 0.25s, width 0.25s;
 }
 
 .open {
-  left: 240px;
-  width: calc(100% - 240px);
-  transition: left 0.25s, width 0.25s;
+  margin-left: 20px;
+  width: calc(100% - 70px);
+  transition: margin-left 0.25s, width 0.25s;
+}
+
+.background-text {
+  font-size: 35vw;
+  position: absolute;
+  cursor: default;
+  bottom: 0;
+  color: #f5f5f5;
+  line-height: 0.8;
+  z-index: -1;
+  right: 0;
 }

@@ -7,8 +7,8 @@ import { ProfileComponent } from './profile/profile.component';
 import {LottieModule} from 'ngx-lottie';
 import player from 'lottie-web';
 import {AppRoutingModule} from './app-routing.module';
-import {NgxTypedJsModule} from 'ngx-typed-js';
 import { BlogComponent } from './blog/blog.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 export function playerFactory() {
   return player;
@@ -27,7 +27,8 @@ export function playerFactory() {
       player: playerFactory,
       useCache: true
     }),
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [
   ],

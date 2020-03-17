@@ -1,3 +1,21 @@
 p {
   margin: 0;
 }
+
+.about-me-container {
+  position: absolute;
+  margin-right: 300px;
+  top: 25%;
+  left: 25%;
+}
+
+.about-me {
+  color: #af0000;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.about-me-text {
+  margin-left: 20px;
+  line-height: 1.5;
+}

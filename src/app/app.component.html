@@ -1,4 +1,4 @@
 <app-left-menu class="left-menu"></app-left-menu>
-<div class="main-view" [ngClass]="{'open': isOpen}">
-  <router-outlet></router-outlet>
+<div class="main-view" [ngClass]="{'open': isOpen}" [@animRoutes]="getPage(appOutlet)">
+  <router-outlet #appOutlet="outlet"></router-outlet>
 </div>
