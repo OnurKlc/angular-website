@@ -1,5 +1,6 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Component, OnInit, OnDestroy, HostListener} from '@angular/core';
 import {Router} from '@angular/router';
+import {debounce} from '../../decorators/debounce.decorator';
 
 @Component({
   selector: 'app-home',
@@ -8,20 +9,16 @@ import {Router} from '@angular/router';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
+  @HostListener('window:mousewheel', ['$event'])
+  handleEvent(event: WheelEvent) {
+    if (event.deltaY > 0) {
+      this.router.navigate(['about']);
+    }
+  }
+
   constructor(private router: Router) {
   }
 
   ngOnInit(): void {
-    window.addEventListener('mousewheel', this.scroll, true);
-  }
-
-  ngOnDestroy(): void {
-    window.removeEventListener('mousewheel', this.scroll, true);
-  }
-
-  scroll = (event): void => {
-    if (event.deltaY > 0) {
-      this.router.navigate(['about']);
-    }
   }
 }

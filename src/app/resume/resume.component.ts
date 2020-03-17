@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
@@ -8,21 +8,22 @@ import {Router} from '@angular/router';
 })
 export class ResumeComponent implements OnInit, OnDestroy {
 
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
-    window.addEventListener('mousewheel', this.scroll, true);
-  }
-
-  ngOnDestroy(): void {
-    window.removeEventListener('mousewheel', this.scroll, true);
-  }
-
-  scroll = (event): void => {
+  @HostListener('window:mousewheel', ['$event'])
+  handleEvent(event: WheelEvent) {
+    console.log(event);
     if (event.deltaY < 0) {
       this.router.navigate(['portfolio']);
     } else {
       this.router.navigate(['blog']);
     }
+  }
+
+  constructor(private router: Router) {
+  }
+
+  ngOnInit(): void {
+  }
+
+  ngOnDestroy(): void {
   }
 }

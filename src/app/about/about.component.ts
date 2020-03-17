@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {Component, OnInit, OnDestroy, HostListener} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
@@ -8,21 +8,18 @@ import {Router} from '@angular/router';
 })
 export class AboutComponent implements OnInit, OnDestroy {
 
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
-    window.addEventListener('mousewheel', this.scroll, true);
+  constructor(private router: Router) {
   }
 
-  ngOnDestroy(): void {
-    window.removeEventListener('mousewheel', this.scroll, true);
-  }
-
-  scroll = (event): void => {
+  @HostListener('window:mousewheel', ['$event'])
+  handleEvent(event: WheelEvent) {
     if (event.deltaY < 0) {
       this.router.navigate(['home']);
     } else {
       this.router.navigate(['portfolio']);
     }
+  }
+
+  ngOnInit(): void {
   }
 }
