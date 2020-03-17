@@ -1,7 +1,7 @@
 .left-menu {
   width: 340px;
   height: 100vh;
-  background: linear-gradient(145deg, #8abccd, #749ead);
+  background: linear-gradient(145deg, #ededed, #ededed);
   box-shadow:  2px 2px 6px #6e96a3, -2px -2px 6px #94cadd;
   position: absolute;
   top: 0;
@@ -27,7 +27,7 @@
   margin: 25px 0;
   width: fit-content;
   cursor: pointer;
-  color: white;
+  color: #2f2f2f;
   padding: 0 3px;
 }
 
@@ -36,7 +36,7 @@
   display: block;
   height: 3px;
   width: 0;
-  background-color: #2c3e50;
+  background-color: #2f2f2f;
 }
 
 .left-menu-list-item:hover:after {
@@ -152,9 +152,10 @@
 .left-menu-opener {
   height: 100vh;
   position: absolute;
+  z-index: 5;
   left: 0;
   width: 20px;
-  background: linear-gradient(145deg, #8abccd, #749ead);
+  background: linear-gradient(145deg, #ededed, #ededed);
   transition: width 0.25s;
 }
 

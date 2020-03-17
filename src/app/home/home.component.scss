@@ -3,27 +3,34 @@ h1 {
   position: absolute;
   left: 50%;
   top: 50%;
+  color: white;
   transform: translate(-50%, -50%);
 }
 
-.first, .second, .third {
+.first, .second, .third, .fourth {
   white-space: nowrap;
   overflow: hidden;
 }
 
 .first {
-  -webkit-animation: type 8s infinite, blink 0.4s infinite;
-  animation: type 8s infinite, blink 0.4s infinite;
+  -webkit-animation: type 12s forwards, blink 0.4s infinite;
+  animation: type 12s forwards, blink 0.4s infinite;
 }
 
 .second {
-  -webkit-animation: type2 8s infinite, blink 0.4s infinite;
-  animation: type2 8s infinite, blink 0.4s infinite;
+  -webkit-animation: type2 12s forwards, blink 0.4s infinite;
+  animation: type2 12s forwards, blink 0.4s infinite;
 }
 
 .third {
-  -webkit-animation: type3 8s infinite, blink 0.4s infinite;
-  animation: type3 8s infinite, blink 0.4s infinite;
+  -webkit-animation: type3 12s forwards, blink 0.4s infinite;
+  animation: type3 12s forwards, blink 0.4s infinite;
+}
+
+.fourth {
+  -webkit-animation: type4 12s, blink 0.4s infinite;
+  animation: type4 12s, blink 0.4s infinite;
+  border-right: 0.15em solid black;
 }
 
 @keyframes type {
@@ -31,11 +38,14 @@ h1 {
     width: 0;
     border-right: .15em solid orange;
   }
-  16.6% {
+  12.5% {
     width: 3.3em;
   }
-  33.3% {
+  25% {
     width: 0;
+  }
+  85% {
+    border: none;
   }
   100% {
     width: 0;
@@ -47,11 +57,14 @@ h1 {
     width: 0;
     border-right: .15em solid orange;
   }
-  16.6% {
+  12.5% {
     width: 3.3em;
   }
-  33.3% {
+  25% {
     width: 0;
+  }
+  85% {
+    border: none;
   }
   100% {
     width: 0;
@@ -62,16 +75,19 @@ h1 {
   0% {
     width: 0;
   }
-  33.3% {
+  25% {
     width: 0;
     border: none;
   }
-  50% {
+  37.5% {
     width: 8.8em;
     border-right: .15em solid orange;
   }
-  67% {
+  50% {
     width: 0;
+  }
+  80% {
+    border: none;
   }
   100% {
     width: 0;
@@ -82,16 +98,19 @@ h1 {
   0% {
     width: 0;
   }
-  33.3% {
+  25% {
     width: 0;
     border: none;
   }
-  50% {
+  37.5% {
     width: 8.8em;
     border-right: .15em solid orange;
   }
-  67% {
+  50% {
     width: 0;
+  }
+  80% {
+    border: none;
   }
   100% {
     width: 0;
@@ -102,15 +121,19 @@ h1 {
   0% {
     width: 0;
   }
-  67% {
+  50% {
     width: 0;
     border: none;
   }
-  83% {
-    width: 5.8em;
+  62.5% {
+    width: 7.6em;
     border-right: .15em solid orange;
   }
+  75% {
+    width: 0;
+  }
   100% {
+    border: none;
     width: 0;
   }
 }
@@ -119,16 +142,63 @@ h1 {
   0% {
     width: 0;
   }
-  67% {
+  50% {
     width: 0;
     border: none;
   }
-  83% {
-    width: 5.8em;
+  62.5% {
+    width: 7.6em;
+    border-right: .15em solid orange;
+  }
+  75% {
+    width: 0;
+  }
+  100% {
+    border: none;
+    width: 0;
+  }
+}
+
+@keyframes type4 {
+  0% {
+    width: 0;
+    border-right: none;
+  }
+  75% {
+    width: 0;
+    border: none;
+  }
+  85% {
+    border-right: .15em solid orange;
+  }
+  87.5% {
+    width: 3.8em;
+  }
+  100% {
+    width: 3.8em;
+    border-right: .15em solid orange;
+  }
+}
+
+@-webkit-keyframes type4 {
+  0% {
+    width: 0;
+    border-right: none;
+  }
+  75% {
+    width: 0;
+    border: none;
+  }
+  85% {
+    border-right: .15em solid orange;
+  }
+  87.5% {
+    width: 3.8em;
     border-right: .15em solid orange;
   }
   100% {
-    width: 0;
+    width: 3.8em;
+    border-right: .15em solid orange;
   }
 }
 
@@ -141,5 +211,118 @@ h1 {
 @-webkit-keyframes blink {
   50% {
     border-color: transparent;
+  }
+}
+
+.main {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-color: #2f2f2f;
+  z-index: -1;
+}
+.d1 {
+  position: absolute;
+  background-image: url(https://hdwallpapers.imgix.net/freestockphotos-36681556897202sucxhas4ql.jpg?auto=compress&cs=tinysrgb&dpr=1);
+  background-size: 2700px 1500px;
+
+  height: 30vh;
+  width: 15vw;
+  left: 5vw;
+  background-position: 0 50%;
+
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  animation: dd1 10s 1, dd12 10s 1;
+  animation-delay: 4s, 14s;
+}
+.d2 {
+  position: absolute;
+  background-image: url(https://hdwallpapers.imgix.net/freestockphotos-36681556897202sucxhas4ql.jpg?auto=compress&cs=tinysrgb&dpr=1);
+  background-size: 2700px 1500px;
+
+  height: 50vh;
+  width: 25vw;
+
+  background-position: -10vw 50%;
+  left: 15vw;
+
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  animation: dd2 10s 2;
+  animation-delay: 4s;
+}
+.d3 {
+  position: absolute;
+  background-image: url(https://hdwallpapers.imgix.net/freestockphotos-36681556897202sucxhas4ql.jpg?auto=compress&cs=tinysrgb&dpr=1);
+  background-size: 2700px 1500px;
+  overflow: hidden;
+
+  height: 100vh;
+  width: 40vw;
+  left: 30vw;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+  background-position: -35vw 50%;
+
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  animation: dd3 10s 2;
+  animation-delay: 4s;
+}
+.d4 {
+  position: absolute;
+  overflow: hidden;
+  background-image: url(https://hdwallpapers.imgix.net/freestockphotos-36681556897202sucxhas4ql.jpg?auto=compress&cs=tinysrgb&dpr=1);
+  background-size: 2700px 1500px;
+
+  height: 80vh;
+  width: 25vw;
+  left: 65vw;
+  background-position: -70vw 50%;
+
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  animation: dd4 10s 2;
+  animation-delay: 4s;
+}
+
+@keyframes dd1 {
+  0% {
+  }
+  50% {
+    width: 95vw;
+  }
+}
+@keyframes dd12 {
+  0% {
+  }
+  50% {
+    background-position: Calc(0vw - 40px) 50%;
+  }
+}
+@keyframes dd2 {
+  0% {
+  }
+  50% {
+    background-position: Calc(-10vw - 40px) 50%;
+  }
+}
+@keyframes dd3 {
+  0% {
+  }
+  50% {
+    background-position: Calc(-35vw - 40px) 50%;
+  }
+}
+@keyframes dd4 {
+  0% {
+  }
+  50% {
+    background-position: Calc(-70vw - 40px) 50%;
   }
 }
