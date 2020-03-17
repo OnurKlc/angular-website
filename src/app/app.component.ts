@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {StateService} from './state.service';
 import {Subscription} from 'rxjs';
 import {animate, group, query, animateChild, style, transition, trigger} from '@angular/animations';
+import { debounce } from 'lodash-es';
 
 @Component({
   selector: 'app-root',
@@ -9,22 +10,22 @@ import {animate, group, query, animateChild, style, transition, trigger} from '@
   styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.None,
   animations: [
-    trigger('animRoutes', [
-      transition('* <=> *', [
-        query(':enter, :leave', style({position: 'fixed', width: '100%'})
-          , {optional: true}),
-        group([
-          query(':enter', [
-            style({transform: 'translateY(100%)'}),
-            animate('0.5s ease-in-out', style({transform: 'translateY(0%)'}))
-          ], {optional: true}),
-          query(':leave', [
-            style({transform: 'translateY(0%)'}),
-            animate('0.5s ease-in-out', style({transform: 'translateY(-100%)'}))
-          ], {optional: true}),
-        ])
-      ]),
-    ])
+    // trigger('animRoutes', [
+    //   transition('* <=> *', [
+    //     query(':enter, :leave', style({})
+    //       , {optional: true}),
+    //     group([
+    //       query(':enter', [
+    //         style({transform: 'scale(0)'}),
+    //         animate('0.25s', style({transform: 'scale(1)'}))
+    //       ], {optional: true}),
+    //       query(':leave', [
+    //         style({transform: 'scale(1)'}),
+    //         animate('0.25s', style({transform: 'scale(0)'}))
+    //       ], {optional: true}),
+    //     ])
+    //   ]),
+    // ])
   ]
 })
 
