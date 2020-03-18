@@ -8,11 +8,13 @@ import * as _ from "lodash-es";
   styleUrls: ['./portfolio.component.scss']
 })
 export class PortfolioComponent implements OnInit {
-  private debounceOnScroll = _.debounce((event) => this.handleEvent(event), 50,
+  private debounceOnScroll = _.debounce((event) => this.handleEvent(event), 200,
     {
-      leading: false,
-      trailing: true
-    })
+      leading: true,
+      trailing: false
+    });
+
+  count = 0;
 
   @HostListener('window:mousewheel', ['$event'])
   onScroll(event: WheelEvent) {
@@ -22,14 +24,17 @@ export class PortfolioComponent implements OnInit {
   constructor(private router: Router) { }
 
   handleEvent(event: WheelEvent) {
-    if (event.deltaY < 0) {
-      this.router.navigate(['about']);
-    } else {
-      this.router.navigate(['resume']);
+    if (this.count > 0) {
+      if (event.deltaY < 0) {
+        this.router.navigate(['about']);
+      } else {
+        this.router.navigate(['resume']);
+      }
     }
   }
 
   ngOnInit(): void {
+    setTimeout(() => this.count++, 1000);
   }
 
 }

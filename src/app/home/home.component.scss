@@ -3,7 +3,7 @@ h1 {
   position: absolute;
   left: 50%;
   top: 50%;
-  color: white;
+  color: #2f2f2f;
   transform: translate(-50%, -50%);
 }
 
@@ -30,7 +30,7 @@ h1 {
 .fourth {
   -webkit-animation: type4 12s, blink 0.4s infinite;
   animation: type4 12s, blink 0.4s infinite;
-  border-right: 0.15em solid white;
+  border-right: 0.15em solid black;
 }
 
 @keyframes type {
@@ -172,10 +172,10 @@ h1 {
     border-right: .15em solid;
   }
   87.5% {
-    width: 3.8em;
+    width: 2.5em;
   }
   100% {
-    width: 3.8em;
+    width: 2.5em;
     border-right: .15em solid;
   }
 }
@@ -193,11 +193,11 @@ h1 {
     border-right: .15em solid;
   }
   87.5% {
-    width: 4.05em;
+    width: 2.38em;
     border-right: .15em solid;
   }
   100% {
-    width: 4.05em;
+    width: 2.38em;
     border-right: .15em solid;
   }
 }
@@ -218,7 +218,7 @@ h1 {
   height: 100vh;
   width: 100vw;
   position: relative;
-  background-color: #2f2f2f;
+  background-image: linear-gradient(to bottom right, lightgray, #f2f2f2);
   z-index: -1;
 }
 .d1 {
@@ -235,7 +235,7 @@ h1 {
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
-  animation: dd1 10s 1, dd12 10s 1;
+  animation: dd1 10s 1, dd12 10s infinite;
   animation-delay: 4s, 14s;
 }
 .d2 {
@@ -252,7 +252,7 @@ h1 {
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
-  animation: dd2 10s 2;
+  animation: dd2 10s infinite;
   animation-delay: 4s;
 }
 .d3 {
@@ -270,7 +270,7 @@ h1 {
   top: 50%;
   transform: translateY(-50%);
   z-index: 3;
-  animation: dd3 10s 2;
+  animation: dd3 10s infinite;
   animation-delay: 4s;
 }
 .d4 {
@@ -287,7 +287,7 @@ h1 {
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
-  animation: dd4 10s 2;
+  animation: dd4 10s infinite;
   animation-delay: 4s;
 }
 

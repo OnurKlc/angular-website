@@ -8,11 +8,13 @@ import * as _ from "lodash-es";
   styleUrls: ['./resume.component.scss']
 })
 export class ResumeComponent implements OnInit, OnDestroy {
-  private debounceOnScroll = _.debounce((event) => this.handleEvent(event), 50,
+  private debounceOnScroll = _.debounce((event) => this.handleEvent(event), 200,
     {
-      leading: false,
-      trailing: true
-    })
+      leading: true,
+      trailing: false
+    });
+
+  count = 0;
 
   @HostListener('window:mousewheel', ['$event'])
   onScroll(event: WheelEvent) {
@@ -20,10 +22,13 @@ export class ResumeComponent implements OnInit, OnDestroy {
   }
 
   handleEvent(event: WheelEvent) {
-    if (event.deltaY < 0) {
-      this.router.navigate(['portfolio']);
-    } else {
-      this.router.navigate(['blog']);
+    console.log(event)
+    if (this.count > 0) {
+      if (event.deltaY < 0) {
+        this.router.navigate(['portfolio']);
+      } else {
+        this.router.navigate(['blog']);
+      }
     }
   }
 
@@ -31,6 +36,7 @@ export class ResumeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    setTimeout(() => this.count++, 1000);
   }
 
   ngOnDestroy(): void {

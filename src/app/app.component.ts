@@ -47,6 +47,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   getPage(outlet) {
-    return outlet.activatedRouteData['page'] || 'one';
+    return outlet.activatedRouteData['page'] || 'home';
   }
 }

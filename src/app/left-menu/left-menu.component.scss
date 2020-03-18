@@ -46,10 +46,10 @@
 
 #nav-icon2 {
   width: 30px;
-  height: 45px;
+  height: 25px;
   position: absolute;
-  left: 15px;
-  top: 50%;
+  left: 10px;
+  top: 5%;
   z-index: 10;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -60,7 +60,9 @@
   -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   cursor: pointer;
+  pointer-events: visible;
 }
+
 
 #nav-icon2 span {
   display: block;
@@ -154,16 +156,18 @@
   position: absolute;
   z-index: 5;
   left: 0;
-  width: 20px;
+  width: 50px;
   background: linear-gradient(145deg, #ededed, #ededed);
   transition: width 0.25s;
+  cursor: pointer;
 }
 
 .left-menu-opener:hover {
-  width: 50px;
+  width: 80px;
   transition: width 0.25s;
 }
 
 .left-menu-opener-open {
-  background: transparent;
+  width: 0 !important;
+  transition: width 0.2s;
 }

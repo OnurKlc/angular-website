@@ -52,4 +52,11 @@ export class LeftMenuComponent implements OnInit {
     this.isOpen = !this.isOpen;
     this.stateService.changeIsOpen(this.isOpen);
   }
+
+  toggleClassIcon() {
+    if (!this.stateService.isOpen) {
+      this.isOpen = !this.isOpen;
+      this.stateService.changeIsOpen(this.isOpen);
+    }
+  }
 }
