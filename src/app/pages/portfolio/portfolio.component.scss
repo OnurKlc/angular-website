@@ -2,3 +2,80 @@ p {
   margin: 0;
 }
 
+.wrapper {
+  display: flex;
+}
+
+.left-block, .right-block {
+  width: 50%;
+}
+
+.left-block {
+  .item-sub-container {
+    margin-bottom: 80px;
+  }
+
+  .item-explanation {}
+
+  .item-explanation:after {
+    align-self: center;
+    content: '';
+    display: block;
+    height: 3px;
+    width: 30px;
+    background-color: #2f2f2f;
+    margin-left: 15px;
+  }
+}
+
+.right-block {
+  padding-left: 30px;
+
+  .item-sub-container {
+    margin-top: 80px;
+  }
+
+  .item-explanation:before {
+    align-self: center;
+    transform: translateX(-40px);
+    content: '';
+    display: block;
+    height: 3px;
+    width: 30px;
+    background-color: #2f2f2f;
+  }
+
+  .item-link {
+    margin-left: 20px;
+  }
+}
+
+.item-sub-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-header {
+  color: #af0000;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.item-explanation {
+  margin: 0 0 20px 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.item-link {
+  margin-left: 10px;
+  padding-top: 20px;
+  text-decoration: none;
+  color: #af0000;
+}
+
+.middle-line {
+  height: calc(100vh - 60px);
+  width: 4px;
+  background-color: #2f2f2f;
+}

@@ -154,8 +154,9 @@
 .left-menu-opener {
   height: 100vh;
   position: absolute;
-  z-index: 5;
+  z-index: 500;
   left: 0;
+  top: 0;
   width: 50px;
   background: linear-gradient(145deg, #ededed, #ededed);
   transition: width 0.25s;

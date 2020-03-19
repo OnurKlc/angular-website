@@ -1,1 +1,24 @@
 <p class="background-text">portfolio</p>
+<div class="container">
+  <div class="wrapper">
+    <div class="left-block">
+      <div class="item-sub-container" *ngFor="let item of portfolioItems; let i = index">
+        <div *ngIf="i % 2 === 0">
+          <p class="item-header">{{ item.title }}</p>
+          <p class="item-explanation">{{ item.explanation }}</p>
+          <a href="{{ item.link }}" class="item-link">See in action</a>
+        </div>
+      </div>
+    </div>
+    <div class="middle-line"></div>
+    <div class="right-block">
+      <div class="item-sub-container" *ngFor="let item of portfolioItems; let i = index">
+        <div *ngIf="i % 2 !== 0">
+          <p class="item-header">{{ item.title }}</p>
+          <p class="item-explanation">{{ item.explanation }}</p>
+          <a href="{{ item.link }}" class="item-link">See in action</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

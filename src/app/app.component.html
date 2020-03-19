@@ -1,5 +1,7 @@
 <app-left-menu class="left-menu"></app-left-menu>
 <div class="main-view" [ngClass]="{'open': isOpen}" [@animRoutes]="getPage(appOutlet)">
+  <div class="router-outlet">
   <router-outlet #appOutlet="outlet"></router-outlet>
+  </div>
 </div>
 <div class='icon-scroll'></div>

@@ -9,6 +9,12 @@ import player from 'lottie-web';
 import {AppRoutingModule} from './app-routing.module';
 import { BlogComponent } from './pages/blog/blog.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CommonModule} from '@angular/common';
+import {HomeComponent} from './pages/home/home.component';
+import {PortfolioComponent} from './pages/portfolio/portfolio.component';
+import {ResumeComponent} from './pages/resume/resume.component';
+import {ContactComponent} from './pages/contact/contact.component';
+import {AboutComponent} from './pages/about/about.component';
 
 export function playerFactory() {
   return player;
@@ -19,7 +25,12 @@ export function playerFactory() {
     AppComponent,
     LeftMenuComponent,
     ProfileComponent,
-    BlogComponent
+    BlogComponent,
+    HomeComponent,
+    PortfolioComponent,
+    ResumeComponent,
+    ContactComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +39,8 @@ export function playerFactory() {
       useCache: true
     }),
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CommonModule
   ],
   providers: [
   ],

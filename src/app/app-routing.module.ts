@@ -8,6 +8,7 @@ import {ResumeComponent} from './pages/resume/resume.component';
 import {ContactComponent} from './pages/contact/contact.component';
 import {NgxTypedJsModule} from 'ngx-typed-js';
 import {BlogComponent} from './pages/blog/blog.component';
+import {BrowserModule} from '@angular/platform-browser';
 
 const appRoots: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -58,6 +59,7 @@ const appRoots: Routes = [
 @NgModule({
   declarations: [],
   imports: [
+    BrowserModule,
     CommonModule,
     RouterModule.forRoot(appRoots),
     NgxTypedJsModule
