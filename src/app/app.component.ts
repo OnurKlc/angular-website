@@ -1,32 +1,15 @@
 import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {StateService} from './state.service';
 import {Subscription} from 'rxjs';
-import {animate, group, query, animateChild, style, transition, trigger} from '@angular/animations';
-import { debounce } from 'lodash-es';
+import {RouterOutlet} from '@angular/router';
+import {fadeAnimation} from './animations/fade.animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  animations: [
-    // trigger('animRoutes', [
-    //   transition('* <=> *', [
-    //     query(':enter, :leave', style({})
-    //       , {optional: true}),
-    //     group([
-    //       query(':enter', [
-    //         style({transform: 'scale(0)'}),
-    //         animate('0.25s', style({transform: 'scale(1)'}))
-    //       ], {optional: true}),
-    //       query(':leave', [
-    //         style({transform: 'scale(1)'}),
-    //         animate('0.25s', style({transform: 'scale(0)'}))
-    //       ], {optional: true}),
-    //     ])
-    //   ]),
-    // ])
-  ]
+  animations: [fadeAnimation]
 })
 
 export class AppComponent implements OnInit, OnDestroy {
@@ -46,7 +29,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  getPage(outlet) {
-    return outlet.activatedRouteData['page'] || 'home';
+  getPage(outlet: RouterOutlet) {
+    return outlet.isActivated ? outlet.activatedRoute : '';
   }
 }
