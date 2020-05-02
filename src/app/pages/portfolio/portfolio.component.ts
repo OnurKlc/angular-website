@@ -53,7 +53,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    setTimeout(() => this.count++, 1000);
+    setTimeout(() => this.count++, 600);
   }
 
 }

@@ -1,6 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import * as _ from "lodash-es";
+import * as _ from 'lodash-es';
 
 @Component({
   selector: 'app-blog',
@@ -35,6 +35,6 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    setTimeout(() => this.count++, 1000);
+    setTimeout(() => this.count++, 600);
   }
 }

@@ -1,3 +1,11 @@
-p {
+.background-text-blog {
+  bottom: unset;
+  top: 0;
   margin: 0;
+  font-size: 60px;
+}
+.iframe {
+  width: calc(100vw - 100px);
+  height: calc(100vh - 80px);
+  border: hidden;
 }

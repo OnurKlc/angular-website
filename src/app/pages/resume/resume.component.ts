@@ -1,6 +1,6 @@
 import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import * as _ from "lodash-es";
+import * as _ from 'lodash-es';
 
 @Component({
   selector: 'app-resume',
@@ -22,7 +22,6 @@ export class ResumeComponent implements OnInit, OnDestroy {
   }
 
   handleEvent(event: WheelEvent) {
-    console.log(event)
     if (this.count > 0) {
       if (event.deltaY < 0) {
         this.router.navigate(['portfolio']);
@@ -36,7 +35,7 @@ export class ResumeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    setTimeout(() => this.count++, 1000);
+    setTimeout(() => this.count++, 600);
   }
 
   ngOnDestroy(): void {

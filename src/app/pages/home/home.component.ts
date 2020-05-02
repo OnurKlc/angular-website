@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   }
 
   handleEvent(event: WheelEvent) {
-    if (event.deltaY > 10 && this.count > 0) {
+    if (event.deltaY > 0 && this.count > 0) {
       this.router.navigate(['about']);
     }
   }
@@ -31,6 +31,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    setTimeout(() => this.count++, 1000);
+    setTimeout(() => this.count++, 600);
   }
 }
