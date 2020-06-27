@@ -7,6 +7,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import {LottieModule} from 'ngx-lottie';
 import player from 'lottie-web';
 import {AppRoutingModule} from './app-routing.module';
+import { NzTimelineModule } from 'ng-zorro-antd/timeline';
+
 import { BlogComponent } from './pages/blog/blog.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
@@ -34,6 +36,7 @@ export function playerFactory() {
   ],
   imports: [
     BrowserModule,
+    NzTimelineModule,
     LottieModule.forRoot({
       player: playerFactory,
       useCache: true

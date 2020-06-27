@@ -46,6 +46,7 @@ export class LeftMenuComponent implements OnInit {
   leftMenuItemClickHandler(item: object) {
     const cloneItem = JSON.parse(JSON.stringify(item));
     this.router.navigate([cloneItem.title.toLowerCase()]);
+    this.toggleClass();
   }
 
   toggleClass() {

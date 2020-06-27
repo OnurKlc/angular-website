@@ -1,24 +1,36 @@
 <p class="background-text">portfolio</p>
-<div class="container">
-  <div class="wrapper">
-    <div class="left-block">
-      <div class="item-sub-container" *ngFor="let item of portfolioItems; let i = index">
-        <div *ngIf="i % 2 === 0">
-          <p class="item-header">{{ item.title }}</p>
-          <p class="item-explanation">{{ item.explanation }}</p>
-          <a href="{{ item.link }}" class="item-link">See in action</a>
-        </div>
+<div class="portfolio-container">
+  <nz-timeline nzMode="alternate">
+    <nz-timeline-item>
+      <div>
+        <p class="item-header">Trivia Quiz</p>
+        <p class="item-explanation">This is a basic quiz game created with React. I used functional structure in all
+          components. State management is handled with Context API. There will be some more improvements
+          via implementing a UI library.</p>
+        <a href="https://demo-trivia.netlify.app/" target="_blank" class="item-link">See in action</a>
       </div>
-    </div>
-    <div class="middle-line"></div>
-    <div class="right-block">
-      <div class="item-sub-container" *ngFor="let item of portfolioItems; let i = index">
-        <div *ngIf="i % 2 !== 0">
-          <p class="item-header">{{ item.title }}</p>
-          <p class="item-explanation">{{ item.explanation }}</p>
-          <a href="{{ item.link }}" class="item-link">See in action</a>
-        </div>
+    </nz-timeline-item>
+    <nz-timeline-item nzColor="green">
+      <div>
+        <p class="item-header">Lorem Ipsum</p>
+        <p class="item-explanation">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+          in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <a href="https://www.google.com" target="_blank" class="item-link">See in action</a>
       </div>
-    </div>
-  </div>
+    </nz-timeline-item>
+    <nz-timeline-item [nzDot]="dotTemplate"
+    >Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+      aperiam, eaque ipsa
+      quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+    </nz-timeline-item
+    >
+    <nz-timeline-item nzColor="red">Network problems being solved 2015-09-01</nz-timeline-item>
+    <nz-timeline-item>Create a services site 2015-09-01</nz-timeline-item>
+    <nz-timeline-item [nzDot]="dotTemplate">Technical testing 2015-09-01</nz-timeline-item>
+  </nz-timeline>
+  <ng-template #dotTemplate>
+    <i nz-icon nzType="clock-circle-o" style="font-size: 16px;"></i>
+  </ng-template>
 </div>
