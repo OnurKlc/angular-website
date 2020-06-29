@@ -8,6 +8,7 @@ import {LottieModule} from 'ngx-lottie';
 import player from 'lottie-web';
 import {AppRoutingModule} from './app-routing.module';
 import { NzTimelineModule } from 'ng-zorro-antd/timeline';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
 import { BlogComponent } from './pages/blog/blog.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -37,6 +38,7 @@ export function playerFactory() {
   imports: [
     BrowserModule,
     NzTimelineModule,
+    NgxExtendedPdfViewerModule,
     LottieModule.forRoot({
       player: playerFactory,
       useCache: true

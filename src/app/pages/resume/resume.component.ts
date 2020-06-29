@@ -1,6 +1,5 @@
-import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
+import {Component, HostListener, Input, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import * as _ from 'lodash-es';
 
 @Component({
   selector: 'app-resume',
@@ -8,34 +7,22 @@ import * as _ from 'lodash-es';
   styleUrls: ['./resume.component.scss']
 })
 export class ResumeComponent implements OnInit, OnDestroy {
-  private debounceOnScroll = _.debounce((event) => this.handleEvent(event), 200,
-    {
-      leading: true,
-      trailing: false
-    });
+  @Input() pdfSrc = '../../../assets/onur_kilic_cv.pdf';
 
-  count = 0;
-
-  @HostListener('window:mousewheel', ['$event'])
-  onScroll(event: WheelEvent) {
-    this.debounceOnScroll(event);
-  }
-
-  handleEvent(event: WheelEvent) {
-    if (this.count > 0) {
-      if (event.deltaY < 0) {
-        this.router.navigate(['portfolio']);
-      } else {
-        this.router.navigate(['blog']);
-      }
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    if (event.code === 'ArrowUp') {
+      this.router.navigate(['portfolio']);
+    } else if (event.code === 'ArrowDown') {
+      this.router.navigate(['blog']);
     }
   }
+
 
   constructor(private router: Router) {
   }
 
   ngOnInit(): void {
-    setTimeout(() => this.count++, 600);
   }
 
   ngOnDestroy(): void {
