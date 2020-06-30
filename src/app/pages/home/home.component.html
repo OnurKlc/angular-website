@@ -5,8 +5,14 @@
     <div class="d3"></div>
     <div class="d4"></div>
   </div>
-  <h1 class="first">I'm Onur</h1>
-  <h1 class="second">A Front-End Developer</h1>
-  <h1 class="third">With a Curious Mind</h1>
-  <h1 class="fourth">Hello!</h1>
+  <ngx-typed-js [strings]="['Hello, ^200 My Name Is Onur <br> ^1000 I am a Frontend Developer']"
+                [typeSpeed]="60"
+                [showCursor]=true
+                [cursorChar]="'|'"
+                [autoInsertCss]=true
+                [backSpeed]="60"
+                [startDelay]="10"
+  >
+    <h1 class="typing"></h1>
+  </ngx-typed-js>
 </div>
