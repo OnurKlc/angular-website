@@ -1,3 +1,21 @@
 p {
   margin: 0;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+  justify-items: center;
+  grid-gap: 20px;
+  margin-right: 70px;
+  height: calc(100% - 100px);
+  overflow: scroll;
+
+  .ant-card-bordered {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+  }
+}

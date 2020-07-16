@@ -81,6 +81,33 @@
   }
 }
 
+.arrow {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+}
+
+.arrow-top {
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 10px;
+  right: 50%;
+}
+
+.arrow-bottom {
+  transform: rotate(135deg);
+  position: absolute;
+  bottom: 10px;
+  right: 50%;
+}
+
+.arrow-container {
+  text-align: center;
+  list-style: none;
+}
+
 .container {
   margin-left: 100px;
   margin-top: 70px;

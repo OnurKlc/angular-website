@@ -1,3 +1,11 @@
 <p class="background-text">blog</p>
 <div class="container">
+  <div *ngFor="let item of blogData" (click)="gotoBlogPost(item.link)">
+    <nz-card style="width:300px;" [nzCover]="coverTemplate" nzHoverable>
+      <nz-card-meta nzTitle={{item.title}} nzDescription={{item.description}}></nz-card-meta>
+    </nz-card>
+    <ng-template #coverTemplate>
+      <img alt="example" src={{item.thumbnail}} />
+    </ng-template>
+  </div>
 </div>

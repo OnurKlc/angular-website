@@ -8,6 +8,7 @@ import {LottieModule} from 'ngx-lottie';
 import player from 'lottie-web';
 import {AppRoutingModule} from './app-routing.module';
 import { NzTimelineModule } from 'ng-zorro-antd/timeline';
+import { NzCardModule } from 'ng-zorro-antd';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import {NgxTypedJsModule} from 'ngx-typed-js';
 
@@ -19,6 +20,7 @@ import {PortfolioComponent} from './pages/portfolio/portfolio.component';
 import {ResumeComponent} from './pages/resume/resume.component';
 import {ContactComponent} from './pages/contact/contact.component';
 import {AboutComponent} from './pages/about/about.component';
+import {HttpClientModule} from '@angular/common/http';
 
 export function playerFactory() {
   return player;
@@ -39,6 +41,7 @@ export function playerFactory() {
   imports: [
     BrowserModule,
     NzTimelineModule,
+    NzCardModule,
     NgxExtendedPdfViewerModule,
     NgxTypedJsModule,
     LottieModule.forRoot({
@@ -47,7 +50,8 @@ export function playerFactory() {
     }),
     AppRoutingModule,
     BrowserAnimationsModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [
   ],
