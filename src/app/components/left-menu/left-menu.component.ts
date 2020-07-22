@@ -18,10 +18,10 @@ export class LeftMenuComponent implements OnInit {
       title: 'About',
       icon: ''
     },
-    {
-      title: 'Portfolio',
-      icon: ''
-    },
+    // {
+    //   title: 'Portfolio',
+    //   icon: ''
+    // },
     {
       title: 'Resume',
       icon: ''

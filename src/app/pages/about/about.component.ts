@@ -13,7 +13,7 @@ export class AboutComponent implements OnInit {
     if (event.code === 'ArrowUp') {
       this.router.navigate(['home']);
     } else if (event.code === 'ArrowDown') {
-      this.router.navigate(['portfolio']);
+      this.router.navigate(['resume']);
     }
   }
 

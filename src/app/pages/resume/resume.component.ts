@@ -12,7 +12,7 @@ export class ResumeComponent implements OnInit, OnDestroy {
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
     if (event.code === 'ArrowUp') {
-      this.router.navigate(['portfolio']);
+      this.router.navigate(['about']);
     } else if (event.code === 'ArrowDown') {
       this.router.navigate(['blog']);
     }
