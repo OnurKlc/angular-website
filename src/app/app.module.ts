@@ -1,18 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { LeftMenuComponent } from './components/left-menu/left-menu.component';
-import { ProfileComponent } from './components/profile/profile.component';
+import {AppComponent} from './app.component';
+import {LeftMenuComponent} from './components/left-menu/left-menu.component';
+import {ProfileComponent} from './components/profile/profile.component';
 import {LottieModule} from 'ngx-lottie';
 import player from 'lottie-web';
 import {AppRoutingModule} from './app-routing.module';
-import { NzTimelineModule } from 'ng-zorro-antd/timeline';
-import { NzCardModule } from 'ng-zorro-antd';
-import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import {NzTimelineModule} from 'ng-zorro-antd/timeline';
+import {NzCardModule} from 'ng-zorro-antd';
+import {NgxExtendedPdfViewerModule} from 'ngx-extended-pdf-viewer';
 import {NgxTypedJsModule} from 'ngx-typed-js';
 
-import { BlogComponent } from './pages/blog/blog.component';
+import {BlogComponent} from './pages/blog/blog.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
 import {HomeComponent} from './pages/home/home.component';
@@ -21,6 +21,13 @@ import {ResumeComponent} from './pages/resume/resume.component';
 import {ContactComponent} from './pages/contact/contact.component';
 import {AboutComponent} from './pages/about/about.component';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import { IconDefinition } from '@ant-design/icons-angular';
+import {NzIconModule} from 'ng-zorro-antd/icon';
+import { LinkedinFill, GithubOutline } from '@ant-design/icons-angular/icons';
+
+const icons: IconDefinition[] = [ LinkedinFill, GithubOutline ];
+
 
 export function playerFactory() {
   return player;
@@ -51,14 +58,16 @@ export function playerFactory() {
     AppRoutingModule,
     BrowserAnimationsModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    NzIconModule.forRoot(icons)
   ],
-  providers: [
-  ],
+  providers: [],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
     NO_ERRORS_SCHEMA
   ]
 })
-export class AppModule { }
+export class AppModule {
+}
