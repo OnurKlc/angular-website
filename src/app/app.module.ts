@@ -7,7 +7,6 @@ import {ProfileComponent} from './components/profile/profile.component';
 import {LottieModule} from 'ngx-lottie';
 import player from 'lottie-web';
 import {AppRoutingModule} from './app-routing.module';
-import { NzButtonModule } from 'ng-zorro-antd/button';
 import {NzTimelineModule} from 'ng-zorro-antd/timeline';
 import {NzCardModule} from 'ng-zorro-antd';
 import {NgxExtendedPdfViewerModule} from 'ngx-extended-pdf-viewer';
