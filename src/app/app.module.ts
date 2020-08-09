@@ -7,6 +7,7 @@ import {ProfileComponent} from './components/profile/profile.component';
 import {LottieModule} from 'ngx-lottie';
 import player from 'lottie-web';
 import {AppRoutingModule} from './app-routing.module';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 import {NzTimelineModule} from 'ng-zorro-antd/timeline';
 import {NzCardModule} from 'ng-zorro-antd';
 import {NgxExtendedPdfViewerModule} from 'ngx-extended-pdf-viewer';
@@ -24,9 +25,9 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { IconDefinition } from '@ant-design/icons-angular';
 import {NzIconModule} from 'ng-zorro-antd/icon';
-import { LinkedinFill, GithubOutline } from '@ant-design/icons-angular/icons';
+import { LinkedinFill, GithubOutline, UpSquareOutline, DownSquareOutline } from '@ant-design/icons-angular/icons';
 
-const icons: IconDefinition[] = [ LinkedinFill, GithubOutline ];
+const icons: IconDefinition[] = [ LinkedinFill, GithubOutline, UpSquareOutline, DownSquareOutline ];
 
 
 export function playerFactory() {

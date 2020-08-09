@@ -1,4 +1,4 @@
-import {Component, HostListener, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
@@ -6,7 +6,8 @@ import {Router} from '@angular/router';
   templateUrl: './resume.component.html',
   styleUrls: ['./resume.component.scss']
 })
-export class ResumeComponent implements OnInit, OnDestroy {
+export class ResumeComponent implements OnInit {
+  showResume?: boolean;
   @Input() pdfSrc = '../../../assets/onur_kilic_cv.pdf';
 
   @HostListener('window:keyup', ['$event'])
@@ -15,16 +16,19 @@ export class ResumeComponent implements OnInit, OnDestroy {
       this.router.navigate(['about']);
     } else if (event.code === 'ArrowDown') {
       this.router.navigate(['blog']);
+    } else if (event.code === 'Escape') {
+      this.showResume = false;
     }
   }
 
+  toggleResumeVisibility = () => {
+    this.showResume = !this.showResume;
+  }
 
   constructor(private router: Router) {
   }
 
   ngOnInit(): void {
-  }
-
-  ngOnDestroy(): void {
+    this.showResume = false;
   }
 }

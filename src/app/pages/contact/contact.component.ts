@@ -1,6 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -12,6 +12,7 @@ export class ContactComponent implements OnInit {
   followingCount?: string;
   location?: string;
   company?: string;
+  starCount?: number;
 
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
@@ -34,15 +35,30 @@ export class ContactComponent implements OnInit {
     }
   }
 
+  createLinkedinScript = () => {
+    const s = document.createElement('script');
+    s.src = 'https://platform.linkedin.com/badges/js/profile.js';
+    s.async = true;
+    s.defer = true;
+    s.type = 'text/javascript';
+    const elementRef = document.getElementsByTagName('head')[0];
+    elementRef.appendChild(s);
+  }
+
 
   ngOnInit(): void {
     this.http.get<any>('https://api.github.com/users/OnurKlc').subscribe(data => {
-      console.log(data);
       this.followerCount = data.followers;
       this.followingCount = data.following;
       this.location = data.location;
-      this.company = data.company
+      this.company = data.company;
     });
+
+    this.http.get<any>('https://api.github.com/users/OnurKlc/starred').subscribe(data => {
+      this.starCount = data.length;
+    });
+
+    this.createLinkedinScript();
   }
 
 }

@@ -1,10 +1,18 @@
 <p class="background-text">resume</p>
-<ngx-extended-pdf-viewer
-  [src]="pdfSrc"
-  useBrowserLocale="true"
-  height="100vh"
-  [showOpenFileButton]="false"
-  [showBookmarkButton]="false"
->
-</ngx-extended-pdf-viewer>
+<div class="button-container">
+  <div class="resume-button" *ngIf="!showResume" (click)="toggleResumeVisibility()">
+    <span>View My Resume</span>
+  </div>
+</div>
+<div *ngIf="showResume">
+  <ngx-extended-pdf-viewer
+    [src]="pdfSrc"
+    useBrowserLocale="true"
+    height="100vh"
+    [zoom]="'100%'"
+    [showOpenFileButton]="false"
+    [showBookmarkButton]="false"
+  >
+  </ngx-extended-pdf-viewer>
+</div>
 
