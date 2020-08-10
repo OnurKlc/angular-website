@@ -3,15 +3,18 @@
   height: 100%;
   min-height: 100vh;
   overflow-y: auto;
-  background: linear-gradient(145deg, #ededed, #a5a5a5);
+  background: linear-gradient(145deg, white, #ededed);
+  box-shadow: 10px 0px 17px -8px rgba(0,0,0,0.42);
   position: absolute;
   top: 0;
   bottom: 0;
   left: -340px;
   transition: left 0.25s;
+}
 
-  .left-menu-list {
-    margin-top: 30px;
+.mobile-left-menu {
+  .nav-container {
+    top: 180px;
   }
 }
 
@@ -20,8 +23,11 @@
   transition: left 0.25s;
 }
 
-.left-menu-list {
-  margin-top: 50px;
+.nav-container {
+  position: absolute;
+  top: 240px;
+  left: 50%;
+  transform: translateX(-50%);
   list-style-type: none;
   padding: 0;
   display: flex;
@@ -33,21 +39,55 @@
   margin: 25px 0;
   width: fit-content;
   cursor: pointer;
-  color: #2f2f2f;
+  color: black;
   padding: 0 3px;
-  font-weight: 500;
+  text-align: center;
+}
+
+.left-menu-list-item.is-active {
+  font-weight: bold;
+  color: #af0000;
+}
+
+.left-menu-list-item.is-active::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100px;
+  background-color: #af0000;
 }
 
 .left-menu-list-item::after {
   content: "";
   display: block;
-  height: 3px;
+  height: 1px;
   width: 0;
   background-color: #af0000;
 }
 
 .left-menu-list-item:hover:after {
-  width: 100%;
+  width: 100px;
+  transition: width 0.25s;
+}
+
+.left-menu-list-item.is-active::before {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100px;
+  background-color: #af0000;
+}
+
+.left-menu-list-item::before {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 0;
+  background-color: #af0000;
+}
+
+.left-menu-list-item:hover:before {
+  width: 100px;
   transition: width 0.25s;
 }
 
