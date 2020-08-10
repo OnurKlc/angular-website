@@ -9,6 +9,13 @@ p {
   left: 25%;
 }
 
+.about-me-container.mobile {
+  position: relative;
+  margin: 45px 20px 20px;
+  top: unset;
+  left: unset;
+}
+
 .about-me {
   color: #af0000;
   font-weight: bold;

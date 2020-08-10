@@ -1,6 +1,7 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
+import {ResponsiveService} from '../../responsive.service';
 
 @Component({
   selector: 'app-contact',
@@ -14,6 +15,8 @@ export class ContactComponent implements OnInit {
   company?: string;
   starCount?: number;
 
+  public isMobile: boolean;
+
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
     if (event.code === 'ArrowUp') {
@@ -21,7 +24,9 @@ export class ContactComponent implements OnInit {
     }
   }
 
-  constructor(private router: Router, private http: HttpClient) {
+  constructor(private router: Router,
+              private http: HttpClient,
+              private responsiveService: ResponsiveService) {
   }
 
   iconClick = (clickedIcon) => {
@@ -59,6 +64,14 @@ export class ContactComponent implements OnInit {
     });
 
     this.createLinkedinScript();
+
+    this.onResize();
+    this.responsiveService.checkWidth();
   }
 
+  onResize() {
+    this.responsiveService.getMobileStatus().subscribe(isMobile => {
+      this.isMobile = isMobile;
+    });
+  }
 }

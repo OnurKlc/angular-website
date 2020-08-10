@@ -1,5 +1,7 @@
 import {Component, OnInit, HostListener} from '@angular/core';
 import {Router} from '@angular/router';
+import {ResponsiveService} from '../../responsive.service';
+import {StateService} from '../../state.service';
 
 @Component({
   selector: 'app-about',
@@ -7,6 +9,9 @@ import {Router} from '@angular/router';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
+
+  public isMobile: boolean;
+  public isOpen: boolean;
 
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
@@ -17,9 +22,22 @@ export class AboutComponent implements OnInit {
     }
   }
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private responsiveService: ResponsiveService,
+              private stateService: StateService) {
   }
 
   ngOnInit(): void {
+    this.onResize();
+    this.responsiveService.checkWidth();
+    this.stateService.isOpen.subscribe(isOpen => {
+      this.isOpen = isOpen;
+    });
+  }
+
+  onResize() {
+    this.responsiveService.getMobileStatus().subscribe(isMobile => {
+      this.isMobile = isMobile;
+    });
   }
 }

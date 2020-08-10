@@ -1,10 +1,12 @@
 .left-menu {
   width: 340px;
   height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(145deg, #ededed, #a5a5a5);
-  box-shadow:  2px 2px 6px #6e96a3, -2px -2px 6px #94cadd;
+  //box-shadow:  2px 2px 6px #6e96a3, -2px -2px 6px #94cadd;
   position: absolute;
   top: 0;
+  bottom: 0;
   left: -340px;
   transition: left 0.25s;
 }

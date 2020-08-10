@@ -1,17 +1,21 @@
 <div class="home">
-  <div class="main">
+  <div class="main" *ngIf="!isMobile">
     <div class="d1"></div>
     <div class="d2"></div>
     <div class="d3"></div>
     <div class="d4"></div>
   </div>
-  <ngx-typed-js [strings]="['Hello, ^200 My Name Is Onur <br> ^1000 I am a Frontend Developer']"
+  <div class="mobile-background" *ngIf="isMobile"></div>
+  <ngx-typed-js [strings]="['Hello, ^200 My Name Is Onur <br> ^1000 I am a Frontend Developer!']"
                 [typeSpeed]="60"
                 [showCursor]=true
                 [cursorChar]="'|'"
                 [autoInsertCss]=true
                 [backSpeed]="60"
                 [startDelay]="10"
+                *ngIf="!isOpen || !isMobile"
+                class="ngx-typed-js"
+                [ngClass]="{'mobile': isMobile}"
   >
     <h1 class="typing"></h1>
   </ngx-typed-js>

@@ -1,5 +1,5 @@
 <app-left-menu class="left-menu"></app-left-menu>
-<div class="main-view" [ngClass]="{'open': isOpen}" [@animRoutes]="getPage(appOutlet)">
+<div class="main-view" [ngClass]="{'open': isOpen, 'mobile-view': isMobile}" [@animRoutes]="getPage(appOutlet)" (window:resize)="onResize()">
   <div class="router-outlet">
   <router-outlet #appOutlet="outlet"></router-outlet>
   </div>

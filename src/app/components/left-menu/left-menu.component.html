@@ -5,7 +5,7 @@
         (click)="leftMenuItemClickHandler(item)">{{ item.title }}</li>
   </ul>
 </div>
-<div class="left-menu-opener" (click)="toggleClass()" [ngClass]="{'left-menu-opener-open': isOpen}">
+<div class="left-menu-opener" *ngIf="!isMobile" (click)="toggleClass()" [ngClass]="{'left-menu-opener-open': isOpen}">
   <div id="nav-icon2" (click)="toggleClassIcon()" [ngClass]="{'open': isOpen}">
     <span></span>
     <span></span>
@@ -14,4 +14,12 @@
     <span></span>
     <span></span>
   </div>
+</div>
+<div id="nav-icon2" (click)="toggleClass()" *ngIf="isMobile" [ngClass]="{'open': isOpen}">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
 </div>

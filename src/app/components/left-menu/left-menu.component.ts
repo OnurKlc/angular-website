@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {ResponsiveService} from '../../responsive.service';
 
 import { StateService} from '../../state.service';
 
@@ -8,6 +9,7 @@ import { StateService} from '../../state.service';
   templateUrl: './left-menu.component.html',
   styleUrls: ['./left-menu.component.scss']
 })
+
 export class LeftMenuComponent implements OnInit {
   leftMenuItems = [
     {
@@ -36,11 +38,23 @@ export class LeftMenuComponent implements OnInit {
     }
   ];
 
-  isOpen = false;
+  public isMobile: boolean;
 
-  constructor(private router: Router, private stateService: StateService) { }
+  public isOpen = false;
+
+  constructor(private router: Router,
+              private stateService: StateService,
+              private responsiveService: ResponsiveService) { }
 
   ngOnInit(): void {
+    this.onResize();
+    this.responsiveService.checkWidth();
+  }
+
+  onResize() {
+    this.responsiveService.getMobileStatus().subscribe(isMobile => {
+      this.isMobile = isMobile;
+    });
   }
 
   leftMenuItemClickHandler(item: object) {

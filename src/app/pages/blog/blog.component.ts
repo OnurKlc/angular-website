@@ -1,6 +1,8 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
+import {ResponsiveService} from '../../responsive.service';
+import {StateService} from "../../state.service";
 
 @Component({
   selector: 'app-blog',
@@ -9,6 +11,8 @@ import {HttpClient} from '@angular/common/http';
 })
 export class BlogComponent implements OnInit {
   blogData = [];
+
+  public isMobile: boolean;
 
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
@@ -19,12 +23,12 @@ export class BlogComponent implements OnInit {
     }
   }
 
-  constructor(private router: Router, private http: HttpClient) {
+  constructor(private router: Router, private http: HttpClient, private responsiveService: ResponsiveService) {
   }
 
   gotoBlogPost = (link) => {
     window.open(link);
-  }
+  };
 
   ngOnInit(): void {
     // tslint:disable-next-line:max-line-length
@@ -36,6 +40,15 @@ export class BlogComponent implements OnInit {
         item.description = item.description.replace('</p>', '');
       }
       this.blogData = data.items;
+    });
+
+    this.onResize();
+    this.responsiveService.checkWidth();
+  }
+
+  onResize() {
+    this.responsiveService.getMobileStatus().subscribe(isMobile => {
+      this.isMobile = isMobile;
     });
   }
 }

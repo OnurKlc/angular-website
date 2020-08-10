@@ -1,5 +1,5 @@
 <p class="background-text">blog</p>
-<div class="container">
+<div class="container" [ngClass]="{'mobile': isMobile}">
   <div *ngFor="let item of blogData">
     <nz-card (click)="gotoBlogPost(item.link)" style="width:300px; max-height: 475px" [nzCover]="coverTemplate" nzHoverable>
       <nz-card-meta nzTitle={{item.title}} nzDescription={{item.description}}></nz-card-meta>

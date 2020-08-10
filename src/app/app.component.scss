@@ -5,14 +5,19 @@
   transition: margin-left 0.25s, width 0.25s;
 }
 
-.pdfViewer, .loadingInProgress {
-  background-color: transparent !important;
+.mobile-view {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  .navigation-info {
+    display: none;
+  }
 }
 
-.open {
-  margin-left: 20px;
-  width: calc(100% - 70px);
-  transition: margin-left 0.25s, width 0.25s;
+.pdfViewer, .loadingInProgress {
+  background-color: transparent !important;
 }
 
 .router-outlet {

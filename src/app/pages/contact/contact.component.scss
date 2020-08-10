@@ -10,8 +10,30 @@ p {
   display: flex;
 }
 
+.contact-me-container.mobile {
+  position: relative;
+  margin-top: 45px;
+  padding-bottom: 45px;
+  height: 100%;
+  overflow-y: auto;
+  flex-wrap: wrap;
+  width: 100%;
+  transform: unset;
+  left: unset;
+  justify-content: center;
+
+  .LI-profile-badge, .github-card {
+    margin-bottom: 10px;
+    margin-top: 2px;
+  }
+}
+
 .LI-profile-badge {
   margin-right: 30px;
+  margin-left: 30px;
+  width: 250px;
+  height: 366.19px;
+  background: whitesmoke;
 }
 
 .github-card {
