@@ -38,7 +38,7 @@ export class LeftMenuComponent implements OnInit {
     }
   ];
 
-  public isMobile: boolean;
+  isMobile: boolean;
 
   public isOpen = false;
 

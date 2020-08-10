@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { AnimationItem } from 'lottie-web';
 import { AnimationOptions } from 'ngx-lottie';
 
@@ -7,7 +7,8 @@ import { AnimationOptions } from 'ngx-lottie';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent {
+  @Input() isMobile: boolean;
   public lottieConfig: object;
 
   constructor() {
@@ -17,12 +18,4 @@ export class ProfileComponent implements OnInit {
             loop: false
     };
   }
-
-    handleAnimation(animationItem: AnimationItem): void {
-        console.log(animationItem);
-    }
-
-  ngOnInit(): void {
-  }
-
 }

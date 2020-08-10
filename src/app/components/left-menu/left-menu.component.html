@@ -1,5 +1,5 @@
 <div class="left-menu" [ngClass]="{'open-menu': isOpen}">
-  <app-profile *ngIf="isOpen"></app-profile>
+  <app-profile *ngIf="isOpen" [isMobile]="isMobile"></app-profile>
   <ul class="left-menu-list">
     <li *ngFor="let item of leftMenuItems" class="left-menu-list-item"
         (click)="leftMenuItemClickHandler(item)">{{ item.title }}</li>
