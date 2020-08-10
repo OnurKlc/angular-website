@@ -14,9 +14,11 @@ p {
   margin: 45px 0 0;
   top: unset;
   left: unset;
-  height: calc(100% + 60px);
-  min-height: -webkit-fill-available;
-  overflow-y: auto !important;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translateZ(0);
   padding: 0 20px 90px 20px;
 }
 
