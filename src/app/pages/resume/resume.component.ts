@@ -1,5 +1,6 @@
 import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {ResponsiveService} from '../../responsive.service';
 
 @Component({
   selector: 'app-resume',
@@ -8,6 +9,7 @@ import {Router} from '@angular/router';
 })
 export class ResumeComponent implements OnInit {
   showResume?: boolean;
+  public isMobile: boolean;
   @Input() pdfSrc = '../../../assets/onur_kilic_cv.pdf';
 
   @HostListener('window:keyup', ['$event'])
@@ -25,10 +27,18 @@ export class ResumeComponent implements OnInit {
     this.showResume = !this.showResume;
   }
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private responsiveService: ResponsiveService) {
   }
 
   ngOnInit(): void {
     this.showResume = false;
+    this.onResize();
+    this.responsiveService.checkWidth();
+  }
+
+  onResize() {
+    this.responsiveService.getMobileStatus().subscribe(isMobile => {
+      this.isMobile = isMobile;
+    });
   }
 }

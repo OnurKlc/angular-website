@@ -14,9 +14,9 @@ p {
   margin: 45px 0 0;
   top: unset;
   left: unset;
-  height: 100%;
+  height: calc(100% + 60px);
   min-height: -webkit-fill-available;
-  overflow-y: auto;
+  overflow-y: auto !important;
   padding: 0 20px 90px 20px;
 }
 

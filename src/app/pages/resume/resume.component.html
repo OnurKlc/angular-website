@@ -1,6 +1,6 @@
 <p class="background-text">resume</p>
-<div class="button-container">
-  <div class="resume-button" *ngIf="!showResume" (click)="toggleResumeVisibility()">
+<div class="button-container" *ngIf="!showResume">
+  <div class="resume-button" (click)="toggleResumeVisibility()">
     <span>View My Resume</span>
   </div>
 </div>
@@ -9,11 +9,11 @@
     [src]="pdfSrc"
     useBrowserLocale="true"
     height="100vh"
-    [zoom]="'100%'"
+    [zoom]="isMobile ? 'page-fit' : '100%'"
     [showOpenFileButton]="false"
     [showBookmarkButton]="false"
   >
   </ngx-extended-pdf-viewer>
-  <p class="esc-info">Press Esc to close</p>
+  <p class="esc-info" *ngIf="!isMobile">Press Esc to close</p>
 </div>
 
