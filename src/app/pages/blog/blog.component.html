@@ -1,5 +1,5 @@
 <p class="background-text">blog</p>
-<div class="container" [ngClass]="{'mobile': isMobile}">
+<div class="container" *ngIf="!showSpinner" [ngClass]="{'mobile': isMobile}">
   <div *ngFor="let item of blogData">
     <nz-card (click)="gotoBlogPost(item.link)" style="width:300px; max-height: 475px" [nzCover]="coverTemplate" nzHoverable>
       <nz-card-meta nzTitle={{item.title}} nzDescription={{item.description}}></nz-card-meta>
@@ -8,4 +8,32 @@
       <img alt="example" src={{item.thumbnail}} />
     </ng-template>
   </div>
+</div>
+<!--spinner code taken from https://codepen.io/aaroniker/pen/zYOewEP-->
+<div class="book" *ngIf="showSpinner">
+  <div class="inner">
+    <div class="left"></div>
+    <div class="middle"></div>
+    <div class="right"></div>
+  </div>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
 </div>

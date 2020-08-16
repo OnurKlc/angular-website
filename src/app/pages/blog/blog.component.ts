@@ -13,6 +13,7 @@ export class BlogComponent implements OnInit {
   blogData = [];
 
   public isMobile: boolean;
+  showSpinner = true;
 
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
@@ -28,7 +29,7 @@ export class BlogComponent implements OnInit {
 
   gotoBlogPost = (link) => {
     window.open(link);
-  };
+  }
 
   ngOnInit(): void {
     const randomText = Math.random().toString(16).slice(2);
@@ -41,6 +42,7 @@ export class BlogComponent implements OnInit {
         item.description = item.description.replace('</p>', '');
       }
       this.blogData = data.items;
+      this.showSpinner = false;
     });
 
     this.onResize();
