@@ -11,9 +11,8 @@ import {BlogComponent} from './pages/blog/blog.component';
 import {BrowserModule} from '@angular/platform-browser';
 
 const appRoots: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
-    path: 'home',
+    path: '',
     component: HomeComponent,
     data: {
       page: 'home',
@@ -53,7 +52,8 @@ const appRoots: Routes = [
     data: {
       page: 'contact',
     }
-  }
+  },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

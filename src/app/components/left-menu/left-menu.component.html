@@ -1,8 +1,8 @@
 <div class="left-menu" [ngClass]="{'open-menu': isOpen, 'mobile-left-menu': isMobile}">
   <app-profile *ngIf="isOpen" [isMobile]="isMobile"></app-profile>
   <div class="nav-container">
-    <a *ngFor="let item of leftMenuItems" class="left-menu-list-item" routerLinkActive="is-active"
-       routerLink="{{'/' + item.title.toLowerCase()}}" (click)="toggleClass()">{{ item.title }}</a>
+    <a *ngFor="let item of leftMenuItems" class="left-menu-list-item" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}"
+       routerLink="{{'/' + (item.title === 'Home' ? '/' : item.title.toLowerCase())}}" (click)="toggleClass()">{{ item.title }}</a>
   </div>
 </div>
 <div class="left-menu-opener" *ngIf="!isMobile" (click)="toggleClass()" [ngClass]="{'left-menu-opener-open': isOpen}">

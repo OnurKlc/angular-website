@@ -16,7 +16,7 @@ export class AboutComponent implements OnInit {
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
     if (event.code === 'ArrowUp') {
-      this.router.navigate(['home']);
+      this.router.navigate(['']);
     } else if (event.code === 'ArrowDown') {
       this.router.navigate(['resume']);
     }
